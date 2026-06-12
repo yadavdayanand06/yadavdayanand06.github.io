@@ -1,0 +1,81 @@
+/* Fade Ins */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Float Animation for Logos/Cards */
+.float {
+  animation: floatMotion 6s ease-in-out infinite;
+}
+
+@keyframes floatMotion {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Gradient text glowing shift */
+.glow-text {
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+}
+
+/* Background pulse glow */
+.pulse-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.pulse-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-blue);
+  top: 10%;
+  right: -10%;
+}
+
+.pulse-glow-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-violet);
+  bottom: 10%;
+  left: -15%;
+}
+
+/* Hover effects */
+.glow-hover {
+  position: relative;
+}
+
+.glow-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+  opacity: 0;
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+
+.glow-hover:hover::after {
+  opacity: 1;
+}
